@@ -1,7 +1,8 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instant_message/main.dart';
+import 'package:instant_message/view/loginScreen.dart';
 
 
 class SplashScreen extends StatefulWidget{
@@ -27,14 +28,14 @@ class SplashScreenState extends State<SplashScreen>{
 
   void showLogin(){
     if (mounted){
-      //Navigator.of(context).pushReplacement(LoginScreen.route());
+      Navigator.of(context).pushReplacement(LoginScreen.route());
     }
   }
 
   @override
   Widget build(BuildContext context){
     return Material(
-      color: Colors.red,
+      color: Colors.blue[900],
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -44,8 +45,10 @@ class SplashScreenState extends State<SplashScreen>{
             'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
     ),
 ),
-          Text("Hello"),
-          
+          CircularProgressIndicator(
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            strokeWidth: 2,
+          ),
         ],
       ),
     );
