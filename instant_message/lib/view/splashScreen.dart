@@ -35,20 +35,17 @@ class SplashScreenState extends State<SplashScreen>{
   Widget build(BuildContext context){
     return Material(
       color: Colors.red,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(128),
+            child: Image.network(
+            'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
+    ),
+),
           Text("Hello"),
-          Text("Hello"),
-          Text("Hello"),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text("Hello"),
-              Text("Hello"),
-              Text("Hello"),
-            ],
-          )
+          
         ],
       ),
     );
